@@ -4,8 +4,6 @@ module.exports = {
     head: [
         ['link', { rel: 'icon', href: '/icon.png' }]
       ],
-      dest: './dist',
-      port: '8080',
       markdown: {
           lineNumbers: true
       },
