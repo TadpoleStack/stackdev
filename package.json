@@ -1,0 +1,15 @@
+{
+  "name": "stackdev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TadpoleStack/stackdev.git",
+  "author": "TadpoleStack <istack@yeah.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.0.0-alpha.47"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  }
+}
