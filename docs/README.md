@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: http://img.mp.itc.cn/upload/20160602/11a0c3e44d704d54950019550dce6d02_th.jpg
-actionText: 是时候展现真正的技术了 →
+actionText: welcome baby →
 actionLink: /#/
 features:
 - title:  比尔·盖茨经典语录/名句
