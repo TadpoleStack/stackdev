@@ -18,7 +18,7 @@ module.exports = [
         ]
     },
     {
-        text: '博客',link: 'https://blog.mewebsite.cn'
+        text: '博客',link: 'https://www.mewebsite.cn'
     },
     {
         text: 'GitHub',link:'https://github.com/TadpoleStack'
