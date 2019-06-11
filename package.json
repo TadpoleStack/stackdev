@@ -9,8 +9,8 @@
     "vuepress": "^1.0.0-alpha.47"
   },
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "d": "deploy.sh"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "deploy.sh"
   }
 }

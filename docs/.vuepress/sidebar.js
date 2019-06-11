@@ -1,26 +1,49 @@
-module.exports = [
+module.exports = {
+  '/stack/':[
     {
-        title: '技术栈简介',   // 必要的
-        path: '/'      // 可选的
-      },
-      {
-        title: 'Vue',
-        children: [
-            {title:'Vue总结',path:'/Vue/'},
-            {title:'Vuex总结',path:'/Vue/Vuex'},
-            {title:'Vue-Router总结',path:'/Vue/Vue-Router'}
-        ]
-      },
-      {
-        title:'JavaScript',
-        children:[
-            { title:'JavaScript总结', path:'/JavaScript/'}
-        ]
-      },
-      {
-        title:'Node',
-        children:[
-            {title:'Node总结',path:'/Node/'}
-        ]
-      }
-]
+      title: '技术栈简介',   // 必要的
+      path: '/stack/introduce/'      // 可选的
+    },
+    {
+      title: 'Vue知识库',
+      children: [
+          {title:'Vue总结',path:'/stack/Vue/'},
+          {title:'Vuex总结',path:'/stack/Vue/Vuex'},
+          {title:'Vue-Router总结',path:'/stack/Vue/Vue-Router'}
+      ]
+    },
+    {
+      title:'JavaScript知识库',
+      children:[
+          { title:'JavaScript总结', path:'/stack/JavaScript/'}
+      ]
+    },
+    {
+      title:'css知识库',
+      children:[
+        { title:'css总结', path:'/stack/css/'}
+      ]
+    },
+    {
+      title:'小程序知识库',
+      children:[
+        {title:'mpvue',path:'/stack/MiniProgram/'}
+      ]
+    },
+    {
+      title:'Node知识库',
+      children:[
+          {title:'Node总结',path:'/stack/Node/'}
+      ]
+    }
+  ],
+  '/homepage/':[
+    {
+      title:'个人主页',
+      children:[
+          {title:'个人简介',path:'/homepage/'}
+      ]
+    }
+  ]
+}
+
