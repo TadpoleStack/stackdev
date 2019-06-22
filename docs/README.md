@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: http://img.mp.itc.cn/upload/20160602/11a0c3e44d704d54950019550dce6d02_th.jpg
+heroImage: /never_give_up.gif
 actionText: welcome baby →
 actionLink: /#/
 features:
@@ -12,6 +12,5 @@ features:
 
 - title:     李嘉诚
   details: 当你放下面子赚钱的时候，说明你已经懂事了。当你用钱赚回面子的时候，说明你已经成功了。当你用面子可以赚钱的时候，说明你已经是人物了。当你还停留在那里喝酒、吹牛，啥也不懂还装懂，只爱所谓的面子的时候，说明你这辈子也就这样了。
-
 footer:  Copyright © 2019 Tadpole技术栈
 ---

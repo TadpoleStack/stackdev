@@ -1,12 +1,13 @@
 module.exports = {
-    title: 'Tadpole——技术栈',
-    description: '这里是Tadpole的技术栈',
+    title: 'Tadpole技术栈',
+    description: '人不定 风初静 回忆漫长庭',
     head: [
         ['link', { rel: 'icon', href: '/ico.png' }]
       ],
-      markdown: {
-          lineNumbers: true
-      },
+    markdown: {
+        lineNumbers: true
+    },
+    evergreen:true,
 
      /**
      * 主题设置
