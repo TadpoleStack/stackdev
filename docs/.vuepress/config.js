@@ -1,6 +1,6 @@
 module.exports = {
     title: 'Tadpole技术栈',
-    description: '人不定 风初静 回忆漫长庭',
+    description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',
     head: [
         ['link', { rel: 'icon', href: '/ico.png' }]
       ],
