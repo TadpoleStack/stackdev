@@ -1,24 +1,29 @@
 module.exports = {
-    title: 'Tadpole技术栈',
-    description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',
-    head: [
+    title: 'Tadpole技术栈',//标题
+    description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',//描述
+    head: [//head标签配置
         ['link', { rel: 'icon', href: '/ico.png' }]
       ],
     markdown: {
         lineNumbers: true
     },
-    evergreen:true,
+    evergreen:true,//兼容性配置
+    locales: {//多语言配置
+      '/': {
+        lang: 'zh-CN',
+      }
+    },
 
      /**
      * 主题设置
      */
     themeConfig: {
-            nav: require('./nav'),//nav部分模块化
-            sidebar: require('./sidebar'),//sidebar部分模块化
+            nav: require('./nav'),//nav模块化
+            sidebar: require('./sidebar'),//sidebar模块化
             sidebarDepth: 2,
-            lastUpdated: '上次更新',
+            lastUpdated: '上次更新',//最后一次更新
             searchMaxSuggestoins: 10,
-            serviceWorker: {
+            serviceWorker: {//serviceWorker配置
             updatePopup: {
                 message: "这儿发布了一些新内容！",
                 buttonText: '点击更新'
@@ -41,5 +46,5 @@ module.exports = {
             // 默认为 "Edit this page"
             editLinkText: '感谢您的阅览！'
     },
-    plugins: ['@vuepress/back-to-top','@vuepress/medium-zoom'] 
+    plugins: ['@vuepress/back-to-top','@vuepress/medium-zoom'] //插件
   }

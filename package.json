@@ -14,5 +14,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "deploy": "deploy.sh"
+  },
+  "dependencies": {
+    "element-ui": "^2.9.2"
   }
 }
