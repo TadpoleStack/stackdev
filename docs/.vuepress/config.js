@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Tadpole技术栈',
+    title: '关山难越，谁悲失路之人！',
     description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',
     head: [
         ['link', { rel: 'icon', href: '/ico.png' }]
@@ -13,18 +13,33 @@ module.exports = {
      * 主题设置
      */
     themeConfig: {
-        nav: require('./nav'),//nav部分模块化
-        sidebar: require('./sidebar'),//sidebar部分模块化
-        sidebarDepth: 2,
-        lastUpdated: 'Last Updated',
-        searchMaxSuggestoins: 10,
-        serviceWorker: {
+            nav: require('./nav'),//nav部分模块化
+            sidebar: require('./sidebar'),//sidebar部分模块化
+            sidebarDepth: 2,
+            lastUpdated: '上次更新',
+            searchMaxSuggestoins: 10,
+            serviceWorker: {
             updatePopup: {
-                message: "New content is available.",
-                buttonText: 'Refresh'
+                message: "这儿发布了一些新内容！",
+                buttonText: '点击更新'
             }
-        },
-        editLinks: true,
-        editLinkText: '在 GitHub 上编辑此页 ！'
-    }
+            },
+            // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+            repo: 'TadpoleStack/stackdev',
+            // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+            // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+            repoLabel: '查看源码',
+            // 以下为可选的编辑链接选项
+            // 假如你的文档仓库和项目本身不在一个仓库：
+            // docsRepo: 'TadpoleStack/TadpoleStack.github.io',
+            // 假如文档不是放在仓库的根目录下：
+            // docsDir: 'docs',
+            // 假如文档放在一个特定的分支下：
+            // docsBranch: 'master',
+            // 默认是 false, 设置为 true 来启用
+            editLinks: true,
+            // 默认为 "Edit this page"
+            editLinkText: '感谢您的阅览！'
+    },
+    plugins: ['@vuepress/back-to-top','@vuepress/medium-zoom'] 
   }
