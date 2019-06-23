@@ -1,3 +1,4 @@
+const secret_data = require('./secretConfig')
 module.exports = {
     title: 'Tadpole技术栈',//标题
     description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',//描述
@@ -46,5 +47,12 @@ module.exports = {
             // 默认为 "Edit this page"
             editLinkText: '感谢您的阅览！'
     },
-    plugins: ['@vuepress/back-to-top','@vuepress/medium-zoom'] //插件
+    plugins: [
+      '@vuepress/back-to-top',
+      '@vuepress/medium-zoom',
+      '@vuepress/google-analytics',
+      {
+        'ga': secret_data.ga
+      }
+    ] //插件
   }
