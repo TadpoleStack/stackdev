@@ -21,14 +21,13 @@ module.exports = {
     themeConfig: {
             nav: require('./nav'),//nav模块化
             sidebar: require('./sidebar'),//sidebar模块化
-            sidebarDepth: 2,
             lastUpdated: '上次更新',//最后一次更新
             searchMaxSuggestoins: 10,
             serviceWorker: {//serviceWorker配置
-            updatePopup: {
-                message: "这儿发布了一些新内容！",
-                buttonText: '点击更新'
-            }
+                updatePopup: {
+                    message: "这儿发布了一些新内容！",
+                    buttonText: '点击更新'
+                }
             },
             // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
             repo: 'TadpoleStack/stackdev',
@@ -47,12 +46,11 @@ module.exports = {
             // 默认为 "Edit this page"
             editLinkText: '感谢您的阅览！'
     },
-    plugins: [
-      '@vuepress/back-to-top',
-      '@vuepress/medium-zoom',
-      '@vuepress/google-analytics',
-      {
-        'ga': secret_data.ga
-      }
-    ] //插件
+    plugins: {
+        '@vuepress/back-to-top':true,
+        '@vuepress/medium-zoom':true,
+        '@vuepress/google-analytics': {
+            'ga': secret_data.ga
+        }
+    }//插件
   }
