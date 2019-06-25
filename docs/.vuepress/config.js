@@ -1,4 +1,4 @@
-const secret_data = require('./secretConfig')
+const secret_data = require('./secretConfig');
 module.exports = {
     title: 'Tadpole技术栈',//标题
     description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',//描述
@@ -9,18 +9,16 @@ module.exports = {
         lineNumbers: true
     },
     evergreen:true,//兼容性配置
-    locales: {//多语言配置
-      '/': {
-        lang: 'zh-CN',
-      }
-    },
-
      /**
      * 主题设置
      */
     themeConfig: {
             nav: require('./nav'),//nav模块化
             sidebar: require('./sidebar'),//sidebar模块化
+            // algolia: {//algolia全文搜索
+            //   apiKey: '<API_KEY>',
+            //   indexName: '<INDEX_NAME>'
+            // },
             lastUpdated: '上次更新',//最后一次更新
             searchMaxSuggestoins: 10,
             serviceWorker: {//serviceWorker配置
@@ -48,7 +46,20 @@ module.exports = {
     },
     plugins: {
         '@vuepress/back-to-top':true,
-        '@vuepress/medium-zoom':true,
+        '@vuepress/medium-zoom':{
+            selector: 'img',
+            options: {
+              margin: 16
+            }
+        },
+        '@vuepress/last-updated':{
+            transformer: (timestamp, lang) => {
+              // 不要忘了安装 moment
+              const moment = require('moment')
+              moment.locale(lang)
+              return moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')
+          }
+        },
         '@vuepress/google-analytics': {
             'ga': secret_data.ga
         }
