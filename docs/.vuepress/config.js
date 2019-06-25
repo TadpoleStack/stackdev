@@ -9,6 +9,11 @@ module.exports = {
         lineNumbers: true
     },
     evergreen:true,//兼容性配置
+    locales: {
+        '/': {
+          lang: 'zh-CN'
+        }
+      },
      /**
      * 主题设置
      */
