@@ -1,17 +1,13 @@
 module.exports = {
     weather:{
         method:"GET",
-        api:"https://free-api.heweather.net/s6/weather"
-    },
-    weather_tool1:{
-        method:"jsonp",
-        api:"https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.0"
+        api:"https://free-api.heweather.net/s6/weather/"
     },
     weather_page:{
         method:"HTTP",
-        api:"https://widget-page.heweather.net/h5/index.html?bg=1&md=0123456&lc=accu"
+        api:"https://widget-page.heweather.net/h5/index.html?bg=1&md=0123456&lc=accu&key=91b6d1e8bdcb4e0583d961a099e12d54"
     },
-    bMap_ip:{
+    bmap_ip:{
         method:"jsonp",
         api:"http://api.map.baidu.com/api?v=2.0"
     }
