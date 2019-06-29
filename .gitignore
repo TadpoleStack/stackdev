@@ -3,3 +3,4 @@ node_modules/
 docs/.vuepress/dist/
 sh.exe.stackdump
 docs/.vuepress/secretConfig.js
+yarn.lock
