@@ -17,8 +17,5 @@ module.exports = [
             {text: '徐老师的技术博客', link: 'https://www.100phone.cn'},
             {text: '田老师的技术博客', link: 'https://me.csdn.net/jiang7701037'}
         ]
-    },
-    {
-        text: 'GitHub',link:'https://github.com/TadpoleStack'
     }
 ]

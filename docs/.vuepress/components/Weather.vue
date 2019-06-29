@@ -1,5 +1,6 @@
 <template>
-    <div v-if="!errStatus&&status" class="code" @click="open">
+    <div v-if="!errStatus&&status" class="noticebarWrap" @click="open">
+    <div class="noticebar customColor" :style="`left:${left}%`">
         <span>{{basic.admin_area}}</span> 
          <span>{{basic.location}}</span>
          <span>{{now.tmp}}℃</span>
@@ -8,6 +9,7 @@
          <span>{{now.wind_sc}}级</span>
          <span v-if="now.vis<2">能见度{{parseInt(now.vis)*1000}}米</span>
          <span>{{lifestyle.drsg.txt}}</span>
+    </div>
     </div>
 </template>
 <script>
@@ -24,7 +26,9 @@ export default {
             basic:null,
             now:null,
             daily_forecast:null,
-            lifestyle:null
+            lifestyle:null,
+            left:0,
+            timer:null
         }
     },
     methods:{
@@ -74,6 +78,14 @@ export default {
         },
         open(){
             window.open(apilist.weather_page.api,"_target")
+        },
+        autoscroll(){
+            this.timer = setInterval(()=>{
+                this.left -=0.1
+                if(this.left<=-200){
+                    this.left = 0;
+                }
+            },10)
         }
     },
     beforecreat(){
@@ -81,10 +93,27 @@ export default {
     },
     mounted(){
         this.Weatherfn()
-    }
+        this.autoscroll();
+    },
+    beforeDestroy() {
+        if(this.timer!=null){
+            clearInterval(this.timer)
+            this.timer = null
+        }
+    },
 }
 </script>
 <style lang="stylus" scoped>
-
+.noticebarWrap
+    background linear-gradient(left,rgb(153,245,224),transparent)
+    position relative
+    overflow hidden
+    height 2rem
+    .noticebar
+        width 100%
+        margin-left 100%
+        position absolute
+        left 0
+        top 0
 </style>
 

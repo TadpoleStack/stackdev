@@ -19,8 +19,7 @@ export default {
 </script>
 
 <style lang="stylus">
-  .page-top{
-    margin-top:3.6rem;
-  }
+.page-top
+  margin-top:3.6rem;
 </style>
 
