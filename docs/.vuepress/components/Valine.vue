@@ -3,7 +3,7 @@
     <hr>
     <span :id="page.path" class="leancloud-visitors" :data-flag-title="page.title">
       <em class="post-meta-item-text">文章阅读量 </em>
-      <i class="leancloud-visitors-count">1000000+</i>
+      <i class="leancloud-visitors-count"> loading...</i>
     </span>
     <div id="vcomments"></div>
   </div>

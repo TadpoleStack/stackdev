@@ -16,7 +16,6 @@
 import apilist from '../api'
 import secret from '../secretConfig'
 import axios from 'axios'
-import { setPriority } from 'os';
 export default {
     name:'Weather',
     data(){
