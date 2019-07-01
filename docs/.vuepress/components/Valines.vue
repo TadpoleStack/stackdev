@@ -13,7 +13,7 @@
 import secret from '../secretConfig';
 import Valine from 'valine';
 export default {
-    name:"Valine",
+    name:"Valines",
       computed: {
     comment: function () {
       let { comment } = this.$frontmatter;

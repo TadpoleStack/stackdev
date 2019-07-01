@@ -13,8 +13,8 @@
     </div>
 </template>
 <script>
-import apilist from '../api'
-import secret from '../secretConfig'
+import apilist from '../../api'
+import secret from '../../secretConfig'
 import axios from 'axios'
 export default {
     name:'Weather',
