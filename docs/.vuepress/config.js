@@ -68,5 +68,8 @@ module.exports = {
         '@vuepress/google-analytics': {
             'ga': secret_data.ga
         }
-    }//插件
+    },//插件
+    globalUIComponents: [
+      'Bgmusic'
+    ]
   }
