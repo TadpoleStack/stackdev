@@ -104,7 +104,6 @@ export default {
 </script>
 <style lang="stylus" scoped>
 .noticebarWrap
-    background linear-gradient(left,rgb(153,245,224),transparent)
     position relative
     overflow hidden
     height 2rem
