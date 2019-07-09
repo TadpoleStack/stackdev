@@ -15,7 +15,6 @@
 <script>
 import apilist from '../../api'
 import secret from '../../secretConfig'
-import axios from 'axios'
 export default {
     name:'Weather',
     data(){
@@ -45,7 +44,7 @@ export default {
             }
        
         let url = `${apilist.weather.api}?location=auto_ip&key=${secret.heweather}`
-           axios.get(url).then(res=>{
+           this.$axios.get(url).then(res=>{
                if(res.status===200){
                    this.basic = res.data.HeWeather6[0].basic;
                    this.now = res.data.HeWeather6[0].now;
