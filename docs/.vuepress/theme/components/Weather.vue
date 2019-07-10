@@ -80,7 +80,7 @@ export default {
         autoscroll(){
             this.timer = setInterval(()=>{
                 this.left -=0.1
-                if(this.left<=-200){
+                if(this.left<=-300){
                     this.left = 0;
                 }
             },10)
@@ -107,7 +107,7 @@ export default {
     overflow hidden
     height 2rem
     .noticebar
-        width 100%
+        width 200%
         margin-left 100%
         position absolute
         left 0
