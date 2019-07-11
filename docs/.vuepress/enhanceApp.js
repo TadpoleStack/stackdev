@@ -1,8 +1,8 @@
 
-import Element from 'element-ui'
+import Element from 'element-ui';//element-ui
 import 'element-ui/lib/theme-chalk/index.css';
-import $axios from 'axios'
-import $ from 'jquery/dist/jquery.slim'
+import $axios from 'axios';//axios
+import $ from 'jquery/dist/jquery.slim';//jquery
 export default ({
  Vue, // VuePress 正在使用的 Vue 构造函数
  options, // 附加到根实例的一些选项
