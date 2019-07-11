@@ -223,7 +223,7 @@ export default {
     .main{
         width: 100%;
         position: absolute;
-        z-index: 10;
+        z-index: 1;
         left: 0px;
         top :3.6rem;
         .tit,.dsc,.footer{
