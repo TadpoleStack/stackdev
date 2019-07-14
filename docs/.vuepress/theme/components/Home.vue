@@ -1,9 +1,12 @@
 <template>
     <div class="homeWrap" :style="`height:${WH}px;`">
-        <script src="https://cdn.bootcss.com/three.js/45/Three.min.js"></script>
         <div class="main" :style="height">
-            <h1 class="tit customColor">关山难越 谁悲失路之人</h1>
-            <h3 class="dsc customColor">愿每一个你 都是自己的造梦者 勇敢的做梦 勇敢的生活!</h3>
+            <h1 class="tit customColor" :style="`top:${Y}px;left:${X}px`">
+				<span  v-for="(item,idx) in tit" :key="idx">{{item}}</span>
+			</h1>
+            <h3 class="dsc customColor" :style="`top:${Y*2.4}px;left:${X*2.4}px`">
+				<span v-for="(item,idx) in dsc" :key="idx">{{item}}</span>
+			</h3>
             <div class="footer">Copyright © 2019 Tadpole技术栈</div>
         </div>
     </div>
@@ -14,7 +17,11 @@ export default {
     name:'Home',
     data(){
         return{
-            WH:1000
+			tit:['关','山','难','越','谁','悲','失','路','之','人'],
+			dsc:['愿','每','一','个','你','都','是','自','己','的','造','梦','者','勇','敢','的','做','梦','勇','敢','的','生','活'],
+			WH:1000,//可视区域高度
+			X:0,//鼠标视差效果
+			Y:0,//鼠标视差效果
         }
     },
     computed:{
@@ -23,7 +30,19 @@ export default {
         }
     },
     methods:{
+        init(){
+			this.WH = window.innerHeight; 
+			window.addEventListener('resize',()=>{
+			})
+		},
+		jsonp(){
+			let body = document.body || document.documentElement;
+			let dom = document.createElement('script');
+			dom.src='https://cdn.bootcss.com/three.js/45/Three.min.js';
+			body.appendChild(dom);
+		},
         threeEffect(){
+			const that = this;
             var Detector = {
                 canvas : !! window.CanvasRenderingContext2D,
                 webgl : ( function () { try { return !! window.WebGLRenderingContext && !! document.createElement( 'canvas' ).getContext( 'experimental-webgl' ); } catch( e ) { return false; } } )(),
@@ -34,7 +53,7 @@ export default {
                     domElement.style.fontFamily = 'monospace';
                     domElement.style.fontSize = '13px';
                     domElement.style.textAlign = 'center';
-                    domElement.style.background = '#eee';
+                    domElement.style.background = '#bbb';
                     domElement.style.color = '#000';
                     domElement.style.padding = '1em';
                     domElement.style.width = '475px';
@@ -195,23 +214,23 @@ export default {
 				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 			}
         },
-        init(){
-			this.WH = window.innerHeight; 
-			document.addEventListener('mousemove',evt=>{
-                let e = evt || window.event
-                console.info(e.pageX,e.pageY)
+		mouseParallax(){
+			if(window.innerWidth<1366)return;
+			document.addEventListener("mousemove",evt=>{
+				let e = evt || window.event;
+				let x = e.clientX/window.innerWidth-0.5,y = e.clientY/window.innerHeight-0.5;
+				let left = -40*x;let top = -40*y;
+				this.X = left;this.Y = top;
 			})
-			window.addEventListener('resize',()=>{
-				document.querySelector('.container').remove();
-				this.threeEffect();
-			})
-        }
-    },
+		}
+	},
     mounted(){
-        this.init();
+		this.init();
+		this.jsonp();
         setTimeout(()=>{
-            this.threeEffect()
-        },2000)
+            this.threeEffect();
+		},500)
+		this.mouseParallax();
     }
 }
 </script>
@@ -220,8 +239,10 @@ export default {
 .homeWrap{
     margin-top: 3.6rem;
 	background: #f5f5f5;
+	user-select:none;
     .main{
         width: 100%;
+		overflow-x:hidden;
         position: absolute;
         z-index: 1;
         left: 0px;
@@ -230,7 +251,20 @@ export default {
             text-align: center;
 		}
         .tit,.dsc{
-            padding: 0 1rem;
+            padding: .5rem 1rem;
+			position:relative;
+			line-height:4rem;
+			cursor:pointer;
+			display:flex;
+			flex-wrap:wrap;
+			justify-content:center;
+			span{
+				transition:all .5s;
+				animation:fadeInLeft 1s;
+				&:hover{
+					font-size:3rem;
+				}
+			}
 		}
         .footer{
             width :100%;
@@ -239,12 +273,16 @@ export default {
 		}
 	}
 }
-@keyframes effect{
-	0%{
-		transform :scale(0);
-	}
-	100%{
-		transform :scale(1.4);
-	}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>
