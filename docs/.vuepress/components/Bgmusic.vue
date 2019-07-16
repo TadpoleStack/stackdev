@@ -11,16 +11,6 @@ export default {
         }
     },
     methods: {
-    //     toggle(){
-    //         let audio = document.querySelector('#audio');
-    //         if(this.audio){
-    //             audio.play()
-    //             this.audio = false;
-    //         }else{
-    //             audio.pause()
-    //             this.audio = true;
-    //         }
-    //     }
         myConsole(){
             console.clear()
             let count=0;

@@ -22,7 +22,7 @@ export default {
 			WH:1000,//可视区域高度
 			X:0,//鼠标视差效果
 			Y:0,//鼠标视差效果
-			colorArr:['orange','red','green']
+			colorArr:['#f5f5f5','rgba(0,255,255,.2)','rgba(127,255,0,.2)','rgba(255,255,0,.2)']
         }
     },
     computed:{

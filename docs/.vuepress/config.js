@@ -69,7 +69,7 @@ module.exports = {
             'ga': secret_data.ga
         }
     },//插件
-    globalUIComponents: [
+    globalUIComponents: [//配置全局组件
       'Bgmusic'
     ]
   }
