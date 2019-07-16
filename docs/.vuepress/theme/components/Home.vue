@@ -22,6 +22,7 @@ export default {
 			WH:1000,//可视区域高度
 			X:0,//鼠标视差效果
 			Y:0,//鼠标视差效果
+			colorArr:['orange','red','green']
         }
     },
     computed:{
@@ -222,6 +223,23 @@ export default {
 				let left = -40*x;let top = -40*y;
 				this.X = left;this.Y = top;
 			})
+		},
+		deviceMotionEvent(){
+			if(window.DeviceMotionEvent) {
+				let speed = 25; 
+				let x=0,y=0,z=0,lastX=0,lastY=0,lastZ=0; 
+				window.addEventListener('devicemotion', evt=>{ 
+					x = evt.accelerationIncludingGravity.x; 
+					y = evt.accelerationIncludingGravity.y; 
+					z = evt.accelerationIncludingGravity.z; 
+					if(Math.abs(x-lastX) > speed || Math.abs(y-lastY) > speed ) { 
+					document.querySelector('.homeWrap').style.backgroundColor = this.colorArr[Math.round(Math.random()*this.colorArr.length)]
+					} 
+					lastX = x; 
+					lastY = y; 
+					lastZ = z; 
+				}, false); 
+			} 
 		}
 	},
     mounted(){
@@ -229,8 +247,9 @@ export default {
 		this.jsonp();
         setTimeout(()=>{
             this.threeEffect();
-		},500)
+		},800)
 		this.mouseParallax();
+		this.deviceMotionEvent();
     }
 }
 </script>
