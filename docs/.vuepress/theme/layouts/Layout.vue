@@ -8,18 +8,19 @@
 </template>
 
 <script>
-  import ParentLayout from '@parent-theme/layouts/Layout.vue'
-  import Weather from '../components/Weather.vue'
+import ParentLayout from "@parent-theme/layouts/Layout.vue";
+import Weather from "../components/Weather.vue";
 export default {
   components: {
     ParentLayout,
-    Weather,
+    Weather
   }
-}
+};
 </script>
 
 <style lang="stylus">
-.page-top
-  margin-top:3.6rem;
+.page-top {
+  margin-top: 3.6rem;
+}
 </style>
 

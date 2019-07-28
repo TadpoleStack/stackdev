@@ -2,7 +2,7 @@
     <div class="ValineComment" v-if="comment">
     <hr>
     <span :id="page.path" class="leancloud-visitors" :data-flag-title="page.title">
-      <em class="post-meta-item-text">文章阅读量 </em>
+      <em class="post-meta-item-text">文章浏览量 </em>
       <i class="leancloud-visitors-count"> loading...</i>
     </span>
     <div id="vcomments"></div>
@@ -14,18 +14,18 @@ import secret from '../secretConfig';
 import Valine from 'valine';
 export default {
     name:"Valines",
-      computed: {
-    comment: function () {
-      let { comment } = this.$frontmatter;
-      if (typeof comment === 'undefined') {
-        return true;
+    computed: {
+      comment: function () {
+        let { comment } = this.$frontmatter;
+        if (typeof comment === 'undefined') {
+          return true;
+        }
+        return comment;
+      },
+      page: function () {
+        let { path = '/', title = '首页' } = this.$page;
+        return { path, title };
       }
-      return comment;
-    },
-    page: function () {
-      let { path = '/', title = '首页' } = this.$page;
-      return { path, title };
-    }
   },
   mounted() {
     this.renderValine()
@@ -38,7 +38,7 @@ export default {
             this.renderValine();
           })
         }
-      }
+      },deep:true
     }
   },
   methods: {
@@ -65,9 +65,10 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .ValineComment {
-    padding 0 2rem;
+  width 80%
+  margin 0 auto 
 }
 .leancloud-visitors {
     display inline-block

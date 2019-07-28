@@ -9,6 +9,7 @@
 			</h3>
             <div class="footer">Copyright © 2019 Tadpole技术栈</div>
         </div>
+		<script src="https://cdn.bootcss.com/three.js/45/Three.min.js"></script>
     </div>
 </template>
 
@@ -35,12 +36,6 @@ export default {
 			this.WH = window.innerHeight; 
 			window.addEventListener('resize',()=>{
 			})
-		},
-		jsonp(){
-			let body = document.body || document.documentElement;
-			let dom = document.createElement('script');
-			dom.src='https://cdn.bootcss.com/three.js/45/Three.min.js';
-			body.appendChild(dom);
 		},
         threeEffect(){
 			const that = this;
@@ -244,7 +239,6 @@ export default {
 	},
     mounted(){
 		this.init();
-		this.jsonp();
         setTimeout(()=>{
             this.threeEffect();
 		},800)
