@@ -15,14 +15,14 @@ import Valine from 'valine';
 export default {
     name:"Valines",
     computed: {
-      comment: function () {
+      comment() {
         let { comment } = this.$frontmatter;
         if (typeof comment === 'undefined') {
           return true;
         }
         return comment;
       },
-      page: function () {
+      page() {
         let { path = '/', title = '首页' } = this.$page;
         return { path, title };
       }

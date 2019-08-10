@@ -4,7 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import $axios from 'axios';//axios
 
-import $ from 'jquery/dist/jquery.slim';//jquery
+import $ from 'zepto'
 
 import $swiper from 'swiper'//swiper
 import 'swiper/dist/css/swiper.min.css'//swiper.min.css
