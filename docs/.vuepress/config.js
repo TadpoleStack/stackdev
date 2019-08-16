@@ -3,7 +3,8 @@ module.exports = {
     title: 'Tadpole技术栈',//标题
     description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',//描述
     head: [//head标签配置
-        ['link', { rel: 'icon', href: '/ico.png' }]
+        ['link', { rel: 'icon', href: '/ico.png' }],
+        ['script',{src:'https://cdn.bootcss.com/three.js/45/Three.min.js'}]
       ],
     markdown: {
         lineNumbers: true

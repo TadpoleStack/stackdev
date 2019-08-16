@@ -27,7 +27,7 @@ git push -f git@github.com:TadpoleStack/TadpoleStack.github.io.git master
 # git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
 
 # 腾讯云开发者平台（coding） 
-# git push -f https://git.dev.tencent.com/mrchen1521620063/mrchen1521620063.git master
+#git push -f https://git.dev.tencent.com/mrchen1521620063/mrchen1521620063.git master
 # 码云
-# git push -f https://gitee.com/TadpoleStack/TadpoleStack.git master
+#git push -f https://gitee.com/TadpoleStack/TadpoleStack.git master
 cd -

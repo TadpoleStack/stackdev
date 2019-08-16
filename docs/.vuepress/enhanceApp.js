@@ -4,7 +4,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import $axios from 'axios';//axios
 
-import $ from 'zepto'
+// import $ from 'zepto'
 
 import $swiper from 'swiper'//swiper
 import 'swiper/dist/css/swiper.min.css'//swiper.min.css
@@ -17,6 +17,6 @@ export default ({
 }) => {
  Vue.use(Element)
  Vue.prototype.$axios = $axios
- Vue.prototype.$ = $
+//  Vue.prototype.$ = $
  Vue.prototype.$swiper = $swiper
 }

@@ -9,7 +9,6 @@
 			</h3>
             <div class="footer">Copyright © 2019 Tadpole技术栈</div>
         </div>
-		<script src="https://cdn.bootcss.com/three.js/45/Three.min.js"></script>
     </div>
 </template>
 
@@ -239,9 +238,7 @@ export default {
 	},
     mounted(){
 		this.init();
-        setTimeout(()=>{
-            this.threeEffect();
-		},800)
+        this.threeEffect();
 		this.mouseParallax();
 		this.deviceMotionEvent();
     }
