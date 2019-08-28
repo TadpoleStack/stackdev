@@ -6,7 +6,7 @@
 - 设置全局的背景音乐
 - axios进行数据的请求
 - moment进行时格式化
-- 设置自定义域名，通过自定义deploy.sh一键发布到GitHub、腾讯云开发者平台（coding）、码云
+- 设置自定义域名，通过自定义travis一键发布到GitHub、腾讯云开发者平台（coding）、码云
 #### 此处是项目源码，下面是网站地址
 #### [GitHub地址](https://istack.site)
 #### [腾讯云开发者平台（coding）发布地址](https://mrchen1521620063.coding.me)

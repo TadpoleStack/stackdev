@@ -5,11 +5,21 @@ module.exports = {
       path: '/stack/introduce/'      // 可选的
     },
     {
+      title: 'Tools类总结',
+      children: [
+        {title:'js获取url参数',path:'/stack/tools/js获取url参数'},
+        {title:'js获取cookie',path:'/stack/tools/js获取cookie'},
+        {title:'js阻止冒泡和取消默认',path:'/stack/tools/js阻止冒泡和取消默认'},
+        {title:'js获取DOM属性',path:'/stack/tools/js获取DOM属性'}
+      ]
+    },
+    {
       title: 'Vue知识库',
       children: [
-          {title:'Vue总结',path:'/stack/Vue/'},
-          {title:'Vuex总结',path:'/stack/Vue/Vuex'},
-          {title:'Vue-Router总结',path:'/stack/Vue/Vue-Router'}
+          {title:'Vue-watch、computed和methods',path:'/stack/Vue/Vue-watch、computed和methods'},
+          {title:'Vuex总结',path:'/stack/Vue/Vuex总结'},
+          {title:'Vue-Router总结',path:'/stack/Vue/Vue-Router总结'},
+          {title:'Vue-Router导航和传参',path:'/stack/Vue/Vue-Router导航和传参'}
       ]
     },
     {
@@ -33,7 +43,8 @@ module.exports = {
     {
       title:'Node知识库',
       children:[
-          {title:'Nodejs搭建迷你服务器',path:'/stack/Node/Nodejs搭建迷你服务器'}
+          {title:'Nodejs搭建迷你服务器',path:'/stack/Node/Nodejs搭建迷你服务器'},
+          {title:'Nodejs连接MySQL',path:'/stack/Node/Nodejs连接MySQL'}
       ]
     }
   ],
