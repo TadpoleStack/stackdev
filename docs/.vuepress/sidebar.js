@@ -33,7 +33,7 @@ module.exports = {
     {
       title:'Node知识库',
       children:[
-          {title:'Node总结',path:'/stack/Node/'}
+          {title:'Nodejs搭建迷你服务器',path:'/stack/Node/Nodejs搭建迷你服务器'}
       ]
     }
   ],

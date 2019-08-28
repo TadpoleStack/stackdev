@@ -4,7 +4,11 @@ module.exports = {
     description: '愿每一个你，也都是自己的造梦者，勇敢的做梦，勇敢的生活!',//描述
     head: [//head标签配置
         ['link', { rel: 'icon', href: '/ico.png' }],
-        ['script',{src:'https://cdn.bootcss.com/three.js/45/Three.min.js'}]
+        ['script',{src:'https://cdn.bootcss.com/three.js/45/Three.min.js'}],//Three.js---cdn
+        ['script',{src:'https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js'}],//zepto.js---cdn
+        ['script',{src:'https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js'}],//swiper.js---cdn
+        ['script',{src:'https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css'}],//swiper.css---cdn
+        ['script',{src:'https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css'}]//animate.css---cdn
       ],
     markdown: {
         lineNumbers: true

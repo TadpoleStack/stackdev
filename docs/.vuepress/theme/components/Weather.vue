@@ -90,8 +90,10 @@ export default {
         this.status = false;
     },
     mounted(){
-        this.Weatherfn()
-        this.autoscroll();
+        this.$nextTick().then(()=>{
+            this.Weatherfn()
+            this.autoscroll();
+        })
     },
     beforeDestroy() {
         if(this.timer!=null){
