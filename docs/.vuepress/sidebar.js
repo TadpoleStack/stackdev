@@ -17,7 +17,8 @@ module.exports = {
         {
             title: 'Web工具类',
             children: [
-                {title: 'gulp4.0的安装与配置', path: '/stack/WebTool/gulp4.0的安装与配置'}
+                {title: 'gulp4.0的安装与配置', path: '/stack/WebTool/gulp4.0的安装与配置'},
+                {title: 'git常用命令总结', path: '/stack/WebTool/git常用命令总结'}
             ]
         },
         {

@@ -1,7 +1,7 @@
 <template>
   <ParentLayout>
-    <div slot="sidebar-top">this is sidebar-top slot</div>
-    <div slot="sidebar-bottom">this is sidebar-bottom slot</div>
+    <div slot="sidebar-top"></div>
+    <div slot="sidebar-bottom"></div>
     <Weather slot="page-top" class="page-top" />
     <Valines slot="page-bottom" />
   </ParentLayout>
