@@ -66,7 +66,8 @@ module.exports = {
             transformer: (timestamp, lang) => {
               // 不要忘了安装 moment
               const moment = require('moment')
-              moment.locale(lang)
+              moment.locale(lang);
+              timestamp -=10000000000;
               return moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')
           }
         },

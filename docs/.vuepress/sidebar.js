@@ -5,23 +5,6 @@ module.exports = {
             path: '/stack/introduce/'      // 可选的
         },
         {
-            title: 'Tools类总结',
-            children: [
-                {title: 'js获取url参数', path: '/stack/tools/js获取url参数'},
-                {title: 'js获取cookie', path: '/stack/tools/js获取cookie'},
-                {title: 'js阻止冒泡和取消默认', path: '/stack/tools/js阻止冒泡和取消默认'},
-                {title: 'js获取DOM属性', path: '/stack/tools/js获取DOM属性'},
-                {title: 'Ajax的封装', path: '/stack/tools/Ajax的封装'}
-            ]
-        },
-        {
-            title: 'Web工具类',
-            children: [
-                {title: 'gulp4.0的安装与配置', path: '/stack/WebTool/gulp4.0的安装与配置'},
-                {title: 'git常用命令总结', path: '/stack/WebTool/git常用命令总结'}
-            ]
-        },
-        {
             title: 'Vue知识库',
             children: [
                 {title: 'Vue-watch、computed和methods', path: '/stack/Vue/Vue-watch、computed和methods'},
@@ -58,6 +41,7 @@ module.exports = {
         {
             title: '小程序知识库',
             children: [
+                {title: '获取小程序胶囊位置', path: '/stack/MiniProgram/获取小程序胶囊位置'},
                 {title: 'mpvue', path: '/stack/MiniProgram/'}
             ]
         },
@@ -66,6 +50,23 @@ module.exports = {
             children: [
                 {title: 'Nodejs搭建迷你服务器', path: '/stack/Node/Nodejs搭建迷你服务器'},
                 {title: 'Nodejs连接MySQL', path: '/stack/Node/Nodejs连接MySQL'}
+            ]
+        },
+        {
+            title: 'Tools类总结',
+            children: [
+                {title: 'js获取url参数', path: '/stack/tools/js获取url参数'},
+                {title: 'js获取cookie', path: '/stack/tools/js获取cookie'},
+                {title: 'js阻止冒泡和取消默认', path: '/stack/tools/js阻止冒泡和取消默认'},
+                {title: 'js获取DOM属性', path: '/stack/tools/js获取DOM属性'},
+                {title: 'Ajax的封装', path: '/stack/tools/Ajax的封装'}
+            ]
+        },
+        {
+            title: 'Web工具类',
+            children: [
+                {title: 'gulp4.0的安装与配置', path: '/stack/WebTool/gulp4.0的安装与配置'},
+                {title: 'git常用命令总结', path: '/stack/WebTool/git常用命令总结'}
             ]
         }
     ],

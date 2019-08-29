@@ -238,11 +238,9 @@ export default {
 	},
     mounted(){
 		this.init();
-		this.$nextTick().then(()=>{
-			this.threeEffect();
-			this.mouseParallax();
-			this.deviceMotionEvent();
-		})
+        this.threeEffect();
+        this.mouseParallax();
+        this.deviceMotionEvent();
     }
 }
 </script>
