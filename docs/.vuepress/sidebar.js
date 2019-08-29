@@ -15,6 +15,12 @@ module.exports = {
             ]
         },
         {
+            title: 'Web工具类',
+            children: [
+                {title: 'gulp4.0的安装与配置', path: '/stack/WebTool/gulp4.0的安装与配置'}
+            ]
+        },
+        {
             title: 'Vue知识库',
             children: [
                 {title: 'Vue-watch、computed和methods', path: '/stack/Vue/Vue-watch、computed和methods'},
@@ -36,7 +42,10 @@ module.exports = {
         {
             title: 'js功能及效果的实现',
             children: [
-                {title:'图片懒加载的实现',path: '/stack/JavaScriptModule/图片懒加载的实现'}
+                {title:'图片懒加载的实现',path: '/stack/JavaScriptModule/图片懒加载的实现'},
+                {title:'放大镜效果的实现',path: '/stack/JavaScriptModule/放大镜效果的实现'},
+                {title:'基本轮播图的实现',path: '/stack/JavaScriptModule/基本轮播图的实现'},
+                {title:'瀑布流的实现',path: '/stack/JavaScriptModule/瀑布流的实现'}
             ]
         },
         {
