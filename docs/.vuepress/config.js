@@ -67,7 +67,7 @@ module.exports = {
               // 不要忘了安装 moment
               const moment = require('moment')
               moment.locale(lang);
-              timestamp -=10000000000;
+              timestamp -=30*24*3600*1000*3;
               return moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')
           }
         },

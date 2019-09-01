@@ -1,32 +1,14 @@
 <template>
-    <div v-if="!errStatus&&status" class="noticebarWrap" @click="open">
-    <div class="noticebar customColor" :style="`left:${left}%`">
-        <span>{{basic.admin_area}}</span> 
-         <span>{{basic.location}}</span>
-         <span>{{now.tmp}}℃</span>
-         <span>{{now.cond_txt}}</span>
-         <span>{{now.wind_dir}}</span>
-         <span>{{now.wind_sc}}级</span>
-         <span v-if="now.vis<2">能见度{{parseInt(now.vis)*1000}}米</span>
-         <span>{{lifestyle.drsg.txt}}</span>
-    </div>
-    </div>
+    <van-notice-bar :text="dsc"  @click="open"/>
 </template>
 <script>
-import apilist from '../../api'
+import apilist from '../../apiModel/api'
 import secret from '../../secretConfig'
 export default {
     name:'Weather',
     data(){
         return{
-            errStatus:null,
-            status:false,
-            basic:null,
-            now:null,
-            daily_forecast:null,
-            lifestyle:null,
-            left:0,
-            timer:null
+            dsc:'',
         }
     },
     methods:{
@@ -35,10 +17,7 @@ export default {
             let h_cache = localStorage.getItem('curhour');
             if(w_cache&&h_cache==new Date().getHours()){
                 let w = JSON.parse(w_cache);
-                this.basic = w.basic;
-                this.now = w.now;
-                this.daily_forecast = w.daily_forecast;
-                this.lifestyle = w.lifestyle;
+                this.dsc= w.basic.admin_area+w.basic.location+w.now.tmp+'℃ '+w.now.cond_txt+w.now.wind_dir+w.now.wind_sc+w.lifestyle.drsg.txt;
                 this.status = true;
                 return;
             }
@@ -46,9 +25,6 @@ export default {
         let url = `${apilist.weather.api}?location=auto_ip&key=${secret.heweather}`
            this.$axios.get(url).then(res=>{
                if(res.status===200){
-                   this.basic = res.data.HeWeather6[0].basic;
-                   this.now = res.data.HeWeather6[0].now;
-                   this.daily_forecast = res.data.HeWeather6[0].daily_forecast;
                    let lifestyle = {};
                    res.data.HeWeather6[0].lifestyle.forEach(val=>{
                        lifestyle[val.type] = {
@@ -56,15 +32,15 @@ export default {
                            txt:val.txt
                        }
                    })
-                   this.lifestyle = lifestyle;
+                   let w = {
+                       basic:res.data.HeWeather6[0].basic,
+                       now:res.data.HeWeather6[0].now,
+                       daily_forecast:res.data.HeWeather6[0].daily_forecast,
+                       lifestyle:lifestyle
+                   }
+                   this.dsc= w.basic.admin_area+w.basic.location+w.now.tmp+'℃ '+w.now.cond_txt+w.now.wind_dir+w.now.wind_sc+w.lifestyle.drsg.txt;
                    this.status = true;
-                   let weatherStr = JSON.stringify({
-                       basic:this.basic,
-                       now:this.now,
-                       daily_forecast:this.daily_forecast,
-                       lifestyle:this.lifestyle
-                   })
-                   localStorage.setItem('weather',weatherStr);
+                  localStorage.setItem('weather',JSON.stringify(w));
                    localStorage.setItem('curhour',new Date().getHours())
                }else{
                    this.errStatus = true;
@@ -77,14 +53,6 @@ export default {
         open(){
             window.open(apilist.weather_page.api,"_target")
         },
-        autoscroll(){
-            this.timer = setInterval(()=>{
-                this.left -=0.1
-                if(this.left<=-300){
-                    this.left = 0;
-                }
-            },10)
-        }
     },
     beforecreat(){
         this.status = false;
@@ -92,15 +60,8 @@ export default {
     mounted(){
         this.$nextTick().then(()=>{
             this.Weatherfn()
-            this.autoscroll();
         })
-    },
-    beforeDestroy() {
-        if(this.timer!=null){
-            clearInterval(this.timer)
-            this.timer = null
-        }
-    },
+    }
 }
 </script>
 <style lang="stylus" scoped>

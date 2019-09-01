@@ -6,6 +6,9 @@ module.exports = [
         text:'技术栈', link:'/stack/introduce/'
     },
     {
+        text:'娱乐', link:'/pastime/news'
+    },
+    {
         text: '博客',link: 'https://www.mewebsite.cn'
     },
     {

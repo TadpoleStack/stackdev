@@ -14,6 +14,11 @@ export default {
   components: {
     ParentLayout,
     Weather
+  },
+  watch:{
+    $route(to,from){
+      to!==from&&this.$notify.close();
+    }
   }
 };
 </script>

@@ -77,6 +77,11 @@ module.exports = {
                 {title: '个人简介', path: '/homepage/'}
             ]
         }
+    ],
+    '/pastime/':[
+        {title:"新闻资讯",path:'/pastime/news'},
+        {title:"美图推荐",path:'/pastime/prettyPic'},
+        {title:"段子分享",path:'/pastime/joke'}
     ]
 }
 

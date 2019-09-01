@@ -2,6 +2,8 @@
 import Element from 'element-ui';//element-ui
 import 'element-ui/lib/theme-chalk/index.css';
 
+import { NoticeBar } from 'vant';
+import 'vant/lib/notice-bar/index.css'
 import $axios from 'axios';//axios
 
 export default ({
@@ -11,5 +13,6 @@ export default ({
  siteData // 站点元数据
 }) => {
  Vue.use(Element)
+ Vue.use(NoticeBar)
  Vue.prototype.$axios = $axios
 }
