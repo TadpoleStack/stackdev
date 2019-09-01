@@ -36,11 +36,11 @@ export default {
 		tipfn(){
 			let count = 1
 			this.timer = setInterval(()=>{
-			count==3&&this.$notify({title:"welcome!陌生人！",message:"不管怎样，很高心你能来到这里！",offset:80,duration:6000})
-			count==6&&this.$notify({title:"本站点是我对一些经验的总结和归纳！",offset:80,duration:6000})
-			count==9&&this.$notify({title:"如果有什么能帮助到你，我会非常高兴！",offset:80,duration:6000})
-			count==12&&this.$notify({title:"归纳总结点击导航！一些娱乐资讯点击娱乐！",offset:80,duration:6000})
-			count==15&&this.$notify({title:"了解更多Tadpole，点击个人主页！谢谢！",offset:80,duration:6000})
+			count==3&&this.$notify({title:"welcome!陌生人！",message:"不管怎样，很高心你能来到这里！",offset:300,duration:6000})
+			count==6&&this.$notify({title:"本站点是我对一些经验的总结和归纳！",offset:300,duration:6000})
+			count==9&&this.$notify({title:"如果有什么能帮助到你，我会非常高兴！",offset:300,duration:6000})
+			count==12&&this.$notify({title:"归纳总结点击导航！一些娱乐资讯点击娱乐！",offset:300,duration:6000})
+			count==15&&this.$notify({title:"了解更多Tadpole，点击个人主页！谢谢！",offset:300,duration:6000})
 			count++;
 			count>15&&clearInterval(this.timer)
 			},1000)
