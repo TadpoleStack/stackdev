@@ -7,6 +7,7 @@ module.exports = {
         {
             title: 'Vue知识库',
             children: [
+                {title: 'mvvm模式数据双向绑定', path: '/stack/Vue/mvvm模式数据双向绑定/'},
                 {title: 'Vue-watch、computed和methods', path: '/stack/Vue/Vue-watch、computed和methods/'},
                 {title: 'Vuex总结', path: '/stack/Vue/Vuex总结/'},
                 {title: 'Vue-Router总结', path: '/stack/Vue/Vue-Router总结/'},

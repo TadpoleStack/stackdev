@@ -5,6 +5,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import { NoticeBar } from 'vant';
 import 'vant/lib/notice-bar/index.css'
 import $axios from 'axios';//axios
+import $http from './apiModel/http'
 
 export default ({
  Vue, // VuePress 正在使用的 Vue 构造函数
@@ -15,4 +16,5 @@ export default ({
  Vue.use(Element)
  Vue.use(NoticeBar)
  Vue.prototype.$axios = $axios
+ Vue.prototype.$http = $http
 }
