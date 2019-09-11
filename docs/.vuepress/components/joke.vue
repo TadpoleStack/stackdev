@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import apiList from '../apiModel/api'
 export default {
     data(){
         return{
@@ -51,23 +50,15 @@ export default {
         this.jokefn();
     },
     methods:{
-        jokefn(){
+        async jokefn(){
             let data_cache = localStorage.getItem('joke');console.info(JSON.parse(data_cache))
             let h_cache = localStorage.getItem('curhour');
             if(data_cache&&h_cache==new Date().getHours()){this.data=JSON.parse(data_cache);return;}
-            this.$axios.post(apiList.openSource_joke.api).then((res) => {
-                this.data = res.data.result;
-                localStorage.setItem('joke',JSON.stringify(this.data))
-            }).catch((err) => {
-                this.$notify({
-                    title:"出错了！不好意思！",
-                    message:"我会尽快修复的，不要着急！",
-                    offset:100
-                })
-                console.error(err)
-            });
+            const res = await this.$http('post','openSource_joke')
+            this.data = res.data.result;
+            localStorage.setItem('joke',JSON.stringify(this.data))
         },
-        jokeDetailsfn(item,ops){
+        async jokeDetailsfn(item,ops){
             if(ops==='before'){
                 this.key--;
                 if(this.key<0){this.key=0;this.$notify({title:"已经是第一条了！"});return;}
@@ -77,19 +68,9 @@ export default {
                 if(this.key>this.data.length-1){this.key=this.data.length-1;this.$notify({title:"没有更多了！"});return;}
                 item = this.data[this.key];
             }
-            let url = `${apiList.openSource_jokeDetail.api}?sid=${item.sid}`
-            this.$axios.get(url).then(res=>{
-                this.datails = res.data.result;
-                this.showStatus = true;
-            }).catch(err=>{
-                this.$notify({
-                    title:"出错了！不好意思！",
-                    message:"我会尽快修复的，不要着急！",
-                    offset:100
-                })
-                console.error(err)
-
-            })
+            const res = await this.$http('get','openSource_jokeDetail',{sid:item.sid})
+            this.datails = res.data.result;
+            this.showStatus = true;
         }
     }
 }

@@ -2,7 +2,6 @@
     <van-notice-bar :text="dsc"  @click="open"/>
 </template>
 <script>
-import apilist from '../../apiModel/api'
 import secret from '../../secretConfig'
 export default {
     name:'Weather',
@@ -12,7 +11,7 @@ export default {
         }
     },
     methods:{
-        Weatherfn(){
+        async Weatherfn(){
             let w_cache = localStorage.getItem('weather');
             let h_cache = localStorage.getItem('curhour');
             if(w_cache&&h_cache==new Date().getHours()){
@@ -21,34 +20,25 @@ export default {
                 this.status = true;
                 return;
             }
-       
-        let url = `${apilist.weather.api}?location=auto_ip&key=${secret.heweather}`
-           this.$axios.get(url).then(res=>{
-               if(res.status===200){
-                   let lifestyle = {};
-                   res.data.HeWeather6[0].lifestyle.forEach(val=>{
-                       lifestyle[val.type] = {
-                           brf:val.brf,
-                           txt:val.txt
-                       }
-                   })
-                   let w = {
-                       basic:res.data.HeWeather6[0].basic,
-                       now:res.data.HeWeather6[0].now,
-                       daily_forecast:res.data.HeWeather6[0].daily_forecast,
-                       lifestyle:lifestyle
-                   }
-                   this.dsc= w.basic.admin_area+w.basic.location+w.now.tmp+'℃ '+w.now.cond_txt+w.now.wind_dir+w.now.wind_sc+w.lifestyle.drsg.txt;
-                   this.status = true;
-                  localStorage.setItem('weather',JSON.stringify(w));
-                   localStorage.setItem('curhour',new Date().getHours())
-               }else{
-                   this.errStatus = true;
-               }
-           }).catch(err=>{
-               this.errStatus = true;
-               console.info(err)
-           })
+            const res = await this.$http('get','weather',{location:'auto_ip',key:secret.heweather})
+            !res&&(this.errStatus = true)
+            let lifestyle = {};
+            res.data.HeWeather6[0].lifestyle.forEach(val=>{
+                lifestyle[val.type] = {
+                    brf:val.brf,
+                    txt:val.txt
+                }
+            })
+            let w = {
+                basic:res.data.HeWeather6[0].basic,
+                now:res.data.HeWeather6[0].now,
+                daily_forecast:res.data.HeWeather6[0].daily_forecast,
+                lifestyle:lifestyle
+            }
+            this.dsc= w.basic.admin_area+w.basic.location+w.now.tmp+'℃ '+w.now.cond_txt+w.now.wind_dir+w.now.wind_sc+w.lifestyle.drsg.txt;
+            this.status = true;
+            localStorage.setItem('weather',JSON.stringify(w));
+            localStorage.setItem('curhour',new Date().getHours())
         },
         open(){
             window.open(apilist.weather_page.api,"_target")

@@ -5,7 +5,6 @@
 
 <script>
 import secretConfig from '../secretConfig'
-import apilist from '../apiModel/api'
 export default {
     name:"homePage",
     data(){
@@ -14,7 +13,6 @@ export default {
         }
     },
     created(){
-        this.aMap();
         this.tipfn();
     },
     methods:{
@@ -26,24 +24,6 @@ export default {
                 duration:10000
             })
         },
-         aMap(){
-            const url = `${apilist.amap_ip.api}?key=${secretConfig.aMapkey}`
-            this.$axios.get(url).then((res) => {
-                this.adcode = res.data.adcode;
-                console.info(res.data);
-                this.aMap_weatherfn();
-            }).catch((err) => {
-                console.error(err);
-            });
-        },
-        aMap_weatherfn(){
-            const url = `${apilist.amap_weather.api}?key=${secretConfig.aMapkey}&city=${this.adcode}`
-            this.$axios.get(url).then(res=>{
-                console.info(res.data)
-            }).catch(err=>{
-                console.error(err)
-            })
-        }
     }
   
 }

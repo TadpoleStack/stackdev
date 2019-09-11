@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import apiList from '../apiModel/api'
 export default {
     data(){
         return{
@@ -20,21 +19,13 @@ export default {
         this.WYnewsfn();
     },
     methods:{
-        WYnewsfn(){
+        async WYnewsfn(){
             let WYnews_cache = localStorage.getItem('WYnews')
             let h_cache = localStorage.getItem('curhour');
             if(WYnews_cache&&h_cache==new Date().getHours()){this.newsData=JSON.parse(WYnews_cache);return;}
-            this.$axios.post(apiList.openSource_WYnews.api).then((res) => {
-                this.newsData = res.data.result;
-                localStorage.setItem('WYnews',JSON.stringify(this.newsData));
-            }).catch((err) => {
-                this.$notify({
-                    title:"出错了！不好意思！",
-                    message:"我会尽快修复的，不要着急！",
-                    offset:100
-                })
-                console.error(err)
-            });
+            const res = await this.$http('post','openSource_WYnews')
+            this.newsData = res.data.result;
+            localStorage.setItem('WYnews',JSON.stringify(this.newsData));
         },
         news_datailesfn(path){
             window.open(path)

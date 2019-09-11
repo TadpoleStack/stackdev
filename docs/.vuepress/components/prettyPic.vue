@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import apiList from '../apiModel/api'
 export default {
     data(){
         return{
@@ -20,21 +19,13 @@ export default {
         this.prettyPicfn();
     },
     methods:{
-        prettyPicfn(){
+        async prettyPicfn(){
             let data_cache = localStorage.getItem('prettyPic');
             let h_cache = localStorage.getItem('curhour');
             if(data_cache&&h_cache==new Date().getHours()){this.data=JSON.parse(data_cache);return;}
-            this.$axios.post(apiList.openSource_prettyPic.api).then((res) => {
-                this.data = res.data.result;
-                localStorage.setItem('prettyPic',JSON.stringify(this.data))
-            }).catch((err) => {
-                console.error(err);
-                this.$notify({
-                    title:"出错了！不好意思！",
-                    message:"我会尽快修复的，不要着急！",
-                    offset:100
-                })
-            });
+            const res = await this.$http('post','openSource_prettyPic');
+            this.data = res.data.result;
+            localStorage.setItem('prettyPic',JSON.stringify(this.data))
         }
     }
 }
