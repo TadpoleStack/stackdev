@@ -23,6 +23,7 @@ module.exports = {
                 {title: 'js中this总结', path: '/stack/JavaScript/js中this总结/'},
                 {title: 'js数组去重总结', path: '/stack/JavaScript/js数组去重总结/'},
                 {title: 'js数组扁平化去重排序', path: '/stack/JavaScript/js数组扁平化去重排序/'},
+                {title: 'js常用算法', path: '/stack/JavaScript/js常用算法/'}
             ]
         },
         {
@@ -57,6 +58,7 @@ module.exports = {
         {
             title: 'Tools类总结',
             children: [
+                {title: '常用正则表达式', path: '/stack/tools/常用正则表达式/'},
                 {title: 'js获取url参数', path: '/stack/tools/js获取url参数/'},
                 {title: 'js获取cookie', path: '/stack/tools/js获取cookie/'},
                 {title: 'js阻止冒泡和取消默认', path: '/stack/tools/js阻止冒泡和取消默认/'},
